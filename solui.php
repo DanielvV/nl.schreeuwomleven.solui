@@ -153,3 +153,36 @@ function solui_civicrm_navigationMenu(&$menu) {
   ));
   _solui_civix_navigationMenu($menu);
 } // */
+
+function _solui_format_postal_code($postalcode){
+
+  $formatted =  preg_replace('/\s/', '', $postalcode);
+  // now we are sure there is no space
+  $formatted =  strtoupper ($formatted);
+  // now we are sure everything is upper case
+  $formatted =  substr( $formatted,0,4).' '.substr( $formatted,4);
+  // space added on the right plase
+  if(preg_match('/^[0-9]{4}\s[A-Z]{2}$/',$formatted)) {
+    // only return valid codes, unvalid codes are untouched
+    return $formatted;
+  } else {
+    return $postalcode;
+  }
+}
+
+/**
+ *  Standarize the dutch postal codes - needed if the code is used for matching
+ *
+ * @param $op
+ * @param $objectName
+ * @param $id
+ * @param $params
+ */
+function solui_civicrm_pre($op, $objectName, $id, &$params) {
+  if (($op == 'edit' || $op == 'create') && $objectName == 'Address') {
+    if (isset($params['country_id']) && $params['country_id'] == 1152) {
+      // 1152 is the internal standard code for the Netherlands
+      $params['postal_code']=_solui_format_postal_code($params['postal_code']);
+    }
+  }
+}
