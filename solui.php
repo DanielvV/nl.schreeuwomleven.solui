@@ -154,14 +154,13 @@ function solui_civicrm_navigationMenu(&$menu) {
   _solui_civix_navigationMenu($menu);
 } // */
 
-function _solui_format_postal_code($postalcode){
-
+function _solui_format_postal_code($postalcode) {
   $formatted =  preg_replace('/\s/', '', $postalcode);
   // now we are sure there is no space
-  $formatted =  strtoupper ($formatted);
+  $formatted =  strtoupper($formatted);
   // now we are sure everything is upper case
-  $formatted =  substr( $formatted,0,4).' '.substr( $formatted,4);
-  // space added on the right plase
+  $formatted =  substr($formatted,0,4).' '.substr($formatted,4);
+  // space added on the right place
   if(preg_match('/^[0-9]{4}\s[A-Z]{2}$/',$formatted)) {
     // only return valid codes, unvalid codes are untouched
     return $formatted;
@@ -170,8 +169,25 @@ function _solui_format_postal_code($postalcode){
   }
 }
 
+function _solui_format_first_name($initials) {
+  $formatted =  preg_replace('/\s/', '', $initials);
+  // now we are sure there is no space
+  $formatted =  preg_replace('/\./', '', $formatted);
+  // now we are sure there are no dots
+  $formatted =  strtoupper($formatted);
+  // now we are sure everything is upper case
+  return implode('.', str_split($formatted)) . '.';
+  // dots added to the right places
+}
+
+function _solui_format_last_name($lastname) {
+  return ucfirst($lastname);
+}
+
 /**
- *  Standarize the dutch postal codes - needed if the code is used for matching
+ *  1. Standardize the dutch postal codes - needed if the code is used for matching
+ *  2. Standardize Initials (saved under first_name)
+ *  3. Standardize Lastnam:w
  *
  * @param $op
  * @param $objectName
@@ -179,10 +195,19 @@ function _solui_format_postal_code($postalcode){
  * @param $params
  */
 function solui_civicrm_pre($op, $objectName, $id, &$params) {
-  if (($op == 'edit' || $op == 'create') && $objectName == 'Address') {
-    if (isset($params['country_id']) && $params['country_id'] == 1152) {
-      // 1152 is the internal standard code for the Netherlands
-      $params['postal_code']=_solui_format_postal_code($params['postal_code']);
+  if ($op == 'edit' || $op == 'create') {
+    if ($objectName == 'Address') {
+      if (isset($params['country_id']) && $params['country_id'] == 1152) {
+        // 1152 is the internal standard code for the Netherlands
+        $params['postal_code']=_solui_format_postal_code($params['postal_code']);
+      }
+    } elseif ($objectName == 'Individual') {
+      if (isset($params['first_name'])) {
+        $params['first_name']=_solui_format_first_name($params['first_name']);
+      }
+      if (isset($params['last_name'])) {
+        $params['last_name']=_solui_format_last_name($params['last_name']);
+      }
     }
   }
 }
