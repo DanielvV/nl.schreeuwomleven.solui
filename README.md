@@ -10,6 +10,7 @@ Specifieke aanpassingen voor de interface van CiviCRM voor Schreeuw om Leven.
 - geboortedatum
 - overlijdingsdatum
 - kenmerken (tags)
+- vinkje bij adres voor factuuradres
 - toevoegen van een foto
 - mogelijkheid om direct een meerkeuze optie uit te breiden (steeksleuteltje)
 
