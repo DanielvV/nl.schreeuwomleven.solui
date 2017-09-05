@@ -28,5 +28,4 @@ Als dit geen geldige postcode opleverd blijft de postcode ongemoeit.
 ## Formattering voorletters en achternaam
 
 Voorbeeld:
-
 ab van klaassen-jansen wordt A.B. van Klaassen-jansen
