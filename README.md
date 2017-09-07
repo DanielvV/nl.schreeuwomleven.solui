@@ -2,10 +2,13 @@
 
 Specifieke aanpassingen voor de interface van CiviCRM voor Schreeuw om Leven. 
 
-## Velden verbergen op de contact kaart
+## Velden verbergen op de contact kaart en bij bewerken contact
 
 - werkgever
 - functie
+- voorkeur communicatiemiddel
+- e-mailformaat
+- communicatiestijl
 - geslacht
 - geboortedatum
 - overlijdingsdatum
@@ -15,7 +18,7 @@ Specifieke aanpassingen voor de interface van CiviCRM voor Schreeuw om Leven.
 - mogelijkheid om direct een meerkeuze optie uit te breiden (steeksleuteltje)
 
 Omdat deze extensie vrij direct ingrijpt op de user interface is het raadzaam hem even uit te schakelen
-als er na een upgrade onverwachte zzaken voorkomen.
+als er na een upgrade onverwachte zaken voorkomen.
 
 ## Formattering postcode
 
@@ -29,4 +32,4 @@ Als dit geen geldige postcode opleverd blijft de postcode ongemoeit.
 ## Formattering voorletters en achternaam
 
 Voorbeeld:
-ab van klaassen-jansen wordt A.B. van Klaassen-jansen
+ab en cd van klaassen-jansen wordt A.B. & C.D. van Klaassen-jansen
