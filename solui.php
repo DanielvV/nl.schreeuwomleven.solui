@@ -170,14 +170,18 @@ function _solui_format_postal_code($postalcode) {
 }
 
 function _solui_format_first_name($initials) {
-  $formatted =  preg_replace('/\s/', '', $initials);
+  $formatted =  str_replace(' en ', '&', $initials);
+  // Innitials of married couple
+  $formatted =  preg_replace('/\s/', '', $formatted);
   // now we are sure there is no space
-  $formatted =  preg_replace('/\./', '', $formatted);
+  $formatted =  str_replace('.', '', $formatted);
   // now we are sure there are no dots
   $formatted =  strtoupper($formatted);
   // now we are sure everything is upper case
-  return implode('.', str_split($formatted)) . '.';
+  $formatted =  implode('.', str_split($formatted)) . '.';
   // dots added to the right places
+  $formatted =  str_replace('.&.', '. & ', $formatted);
+  return $formatted;
 }
 
 function _solui_format_last_name($lastname) {
@@ -197,15 +201,15 @@ function _solui_format_last_name($lastname) {
 function solui_civicrm_pre($op, $objectName, $id, &$params) {
   if ($op == 'edit' || $op == 'create') {
     if ($objectName == 'Address') {
-      if (isset($params['country_id']) && $params['country_id'] == 1152) {
+      if (isset($params['country_id']) && $params['country_id'] == 1152 && !empty($params['postal_code'])) {
         // 1152 is the internal standard code for the Netherlands
         $params['postal_code']=_solui_format_postal_code($params['postal_code']);
       }
     } elseif ($objectName == 'Individual') {
-      if (isset($params['first_name'])) {
+      if (!empty($params['first_name'])) {
         $params['first_name']=_solui_format_first_name($params['first_name']);
       }
-      if (isset($params['last_name'])) {
+      if (!empty($params['last_name'])) {
         $params['last_name']=_solui_format_last_name($params['last_name']);
       }
     }
