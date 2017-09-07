@@ -2,6 +2,9 @@
 
 Specifieke aanpassingen voor de interface van CiviCRM voor Schreeuw om Leven. 
 
+Omdat deze extensie vrij direct ingrijpt op de user interface is het raadzaam hem even uit te schakelen
+als er na een upgrade onverwachte zaken voorkomen.
+
 ## Velden verbergen op de contact kaart en bij bewerken contact
 
 - werkgever
@@ -17,8 +20,7 @@ Specifieke aanpassingen voor de interface van CiviCRM voor Schreeuw om Leven.
 - toevoegen van een foto
 - mogelijkheid om direct een meerkeuze optie uit te breiden (steeksleuteltje)
 
-Omdat deze extensie vrij direct ingrijpt op de user interface is het raadzaam hem even uit te schakelen
-als er na een upgrade onverwachte zaken voorkomen.
+- alle tabbladen worden uitgeklapt bij het aanmaken of bewerken van een contact
 
 ## Formattering postcode
 

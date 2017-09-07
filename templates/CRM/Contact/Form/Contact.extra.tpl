@@ -12,5 +12,8 @@
       CRM.$('#CIVICRM_QFID_1_gender_id').parent().parent().hide();
       CRM.$('#birth_date').parent().parent().hide();
       CRM.$('#is_deceased').prop('onclick',null).off('click');
+      CRM.$('.crm-accordion-wrapper.collapsed').crmAccordionToggle();
+      CRM.$('a#expand').attr('href', '#collapse');
+      CRM.$('a#expand').text('Alle tabbladen inklappen');
     </script>
 {/literal}
