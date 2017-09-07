@@ -170,14 +170,14 @@ function _solui_format_postal_code($postalcode) {
 }
 
 function _solui_format_first_name($initials) {
-  $formatted =  str_replace(' en ', '&', $initials);
+  $formatted =  strtoupper($initials);
+  // now we are sure everything is upper case
+  $formatted =  str_replace(' EN ', ' & ', $formatted);
   // Innitials of married couple
   $formatted =  preg_replace('/\s/', '', $formatted);
   // now we are sure there is no space
   $formatted =  str_replace('.', '', $formatted);
   // now we are sure there are no dots
-  $formatted =  strtoupper($formatted);
-  // now we are sure everything is upper case
   $formatted =  implode('.', str_split($formatted)) . '.';
   // dots added to the right places
   $formatted =  str_replace('.&.', '. & ', $formatted);
