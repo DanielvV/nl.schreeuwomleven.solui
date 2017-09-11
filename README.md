@@ -11,6 +11,7 @@ als er na een upgrade onverwachte zaken voorkomen.
 - functie
 - voorkeur communicatiemiddel
 - e-mailformaat
+- e-mail handtekening
 - communicatiestijl
 - geslacht
 - geboortedatum
