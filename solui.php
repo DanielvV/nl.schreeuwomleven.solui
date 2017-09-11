@@ -176,11 +176,14 @@ function _solui_format_first_name($initials) {
   // Innitials of married couple
   $formatted =  preg_replace('/\s/', '', $formatted);
   // now we are sure there is no space
+  $formatted =  str_replace('IJ.', '*', $formatted);
+  // special case
   $formatted =  str_replace('.', '', $formatted);
   // now we are sure there are no dots
   $formatted =  implode('.', str_split($formatted)) . '.';
   // dots added to the right places
   $formatted =  str_replace('.&.', '. & ', $formatted);
+  $formatted =  str_replace('*', 'IJ', $formatted);
   return $formatted;
 }
 
