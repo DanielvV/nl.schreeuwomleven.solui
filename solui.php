@@ -203,6 +203,8 @@ function _solui_format_last_name($lastname) {
  */
 function solui_civicrm_pre($op, $objectName, $id, &$params) {
   if ($op == 'edit' || $op == 'create') {
+CRM_Core_Error::debug_var('params', $params, false);
+CRM_Core_Error::debug_var('objectName ', $objectName , false);
     if ($objectName == 'Address') {
       if (isset($params['country_id']) && $params['country_id'] == 1152 && !empty($params['postal_code'])) {
         // 1152 is the internal standard code for the Netherlands
@@ -214,6 +216,13 @@ function solui_civicrm_pre($op, $objectName, $id, &$params) {
       }
       if (!empty($params['last_name'])) {
         $params['last_name']=_solui_format_last_name($params['last_name']);
+      }
+      if (!empty($params['nick_name'])) {
+        $params['nick_name']=_solui_format_last_name($params['nick_name']);
+      }
+    } elseif ($objectName == 'Email') {
+      if (!empty($params['email'])) {
+        $params['is_bulkmail']='1';
       }
     }
   }
