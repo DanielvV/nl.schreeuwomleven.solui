@@ -12,6 +12,7 @@ als er na een upgrade onverwachte zaken voorkomen.
 - voorkeur communicatiemiddel
 - e-mailformaat
 - e-mail handtekening
+- e-mail bulkmail vinkje 
 - communicatiestijl
 - geslacht
 - geboortedatum
@@ -35,4 +36,4 @@ Als dit geen geldige postcode opleverd blijft de postcode ongemoeit.
 ## Formattering voorletters en achternaam
 
 Voorbeeld:
-ab en cd van klaassen-jansen wordt A.B. & C.D. van Klaassen-jansen
+ab en cd van klaassen-jansen, roepnaam: albert en cornelia wordt A.B. & C.D. van Klaassen-jansen, roepnaam: Albert en cornelia
