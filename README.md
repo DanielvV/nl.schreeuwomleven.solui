@@ -24,6 +24,9 @@ als er na een upgrade onverwachte zaken voorkomen.
 
 - alle tabbladen worden uitgeklapt bij het aanmaken of bewerken van een contact
 
+## Volgorde snelzoeker
+- Postcode op tweede plek
+
 ## Formattering postcode
 
 Als een adres in Nederland ligt dan wordt geprobeerd de code een standaard formaat te geven n.l.:
