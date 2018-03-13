@@ -36,7 +36,7 @@ Als een adres in Nederland ligt dan wordt geprobeerd de code een standaard forma
 
 Als dit geen geldige postcode opleverd blijft de postcode ongemoeit.
 
-## Formattering voorletters en achternaam
+## Formattering voorletters, roepnaam en achternaam
 
 Voorbeeld:
 ab en cd van klaassen-jansen, roepnaam: albert en cornelia wordt A.B. & C.D. van Klaassen-jansen, roepnaam: Albert en cornelia
