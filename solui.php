@@ -135,7 +135,9 @@ function solui_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
  *
 function solui_civicrm_preProcess($formName, &$form) {
 
-} // */
+}
+//
+*/
 
 /**
  * Implements hook_civicrm_navigationMenu().
@@ -152,7 +154,9 @@ function solui_civicrm_navigationMenu(&$menu) {
     'separator' => 0,
   ));
   _solui_civix_navigationMenu($menu);
-} // */
+}
+//
+*/
 
 function _solui_format_postal_code($postalcode) {
   $formatted =  preg_replace('/\s/', '', $postalcode);
