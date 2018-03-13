@@ -225,3 +225,12 @@ function solui_civicrm_pre($op, $objectName, $id, &$params) {
     }
   }
 }
+
+/**
+ * Implements hook_civicrm_coreResourceList().
+ */
+function solui_civicrm_coreResourceList(&$items, $region) {
+  if ($region == 'html-header') {
+    CRM_Core_Resources::singleton()->addScriptFile('nl.schreeuwomleven.solui', 'js/navigation.extra.js');
+  }
+}
