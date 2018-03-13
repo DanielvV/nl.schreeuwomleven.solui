@@ -8,6 +8,7 @@
       CRM.$('#job_title').parent().hide();
       CRM.$('#image_URL').parent().hide();
       CRM.$('#preferred_mail_format').parent().hide();
+      CRM.$('#contactDetails .contact_information-section tr > td:nth-child(3)').hide();
       CRM.$('.email-signature').hide();
       CRM.$('#CIVICRM_QFID_1_communication_style_id').parent().parent().hide();
       CRM.$('#CIVICRM_QFID_1_gender_id').parent().parent().hide();
