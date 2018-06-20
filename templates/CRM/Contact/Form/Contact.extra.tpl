@@ -12,7 +12,8 @@
       CRM.$('.email-signature').hide();
       CRM.$('#CIVICRM_QFID_1_communication_style_id').parent().parent().hide();
       CRM.$('#CIVICRM_QFID_1_gender_id').parent().parent().hide();
-      CRM.$('#birth_date').parent().parent().hide();
+      //Uncomment the line below to hide birth date
+      //CRM.$('#birth_date').parent().parent().hide();
       CRM.$('#is_deceased').prop('onclick',null).off('click');
       CRM.$('.crm-accordion-wrapper.collapsed').crmAccordionToggle();
       CRM.$('a#expand').attr('href', '#collapse');
