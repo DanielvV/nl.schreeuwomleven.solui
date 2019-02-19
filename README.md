@@ -15,7 +15,7 @@ als er na een upgrade onverwachte zaken voorkomen.
 - e-mail bulkmail vinkje 
 - communicatiestijl
 - geslacht
-- geboortedatum
+- geboortedatum (op dit moment wel zichtbaar)
 - overlijdingsdatum
 - kenmerken (tags)
 - vinkje bij adres voor factuuradres
